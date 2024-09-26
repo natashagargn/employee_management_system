@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>seek coding</title>
+    <link rel="stylesheet" href="loginsty.css">
+    <!---we had linked our css file----->
+</head>
+
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+            <div class="social-icons">
+                <img src="images/account/fb.png">
+                <img src="images/account/tw.png">
+                <img src="images/account/gp.png">
+            </div>
+            <form id="login" class="input-group">
+                <input type="text" id="login_username" class="input-field" name="emailid" placeholder="User-Id"
+                    required>
+                <input type="password" id="login_password" class="input-field" name="passwd"
+                    placeholder="Enter Password" required>
+                <input type="checkbox" class="chech-box"><span>Remember password</span>
+                <button type="submit" class="submit-btn">Log in</button>
+
+            </form>
+            <form id="register" class="input-group">
+                <input type="text" class="input-field" name="username" placeholder="Username" id="register_username"
+                    required>
+                <input type="password" class="input-field" name="passwd" placeholder="Password" id="register_password"
+                    required>
+                <input type="checkbox" class="chech-box"><span>I agree to the terms & conditions</span>
+                <button type="submit" class="submit-btn">Register</button>
+
+            </form>
+
+        </div>
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+            const form = document.getElementById("register")
+            form.addEventListener("submit", Signup)
+
+            async function Signup(e) {
+                const register_username = document.getElementById("register_username").value
+                const register_password = document.getElementById("register_password").value
+                e.preventDefault();
+
+                try {
+                    const response = await fetch('http://localhost:3000/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            username: register_username,
+                            password: register_password
+                        })
+                    });
+
+                    // Handle the response
+                    if (response.ok) {
+                        const result = await response.json();
+                        console.log('Signup successful:', result);
+                        alert(result.message);
+                    } else {
+                        console.error('Signup failed:', response.statusText);
+                    }
+                } catch (error) {
+                    console.error('Error during signup:', error);
+                }
+            }
+
+            x.addEventListener("submit", SignupLogin)
+
+
+
+            async function SignupLogin(e) {
+                e.preventDefault()
+
+                const login_username = document.getElementById("login_username").value
+                const login_password = document.getElementById("login_password").value
+                e.preventDefault();
+
+                try {
+                    const response = await fetch('http://localhost:3000/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            username: login_username,
+                            password: login_password
+                        })
+                    });
+
+                    console.log(response)
+
+                    if (response.ok) {
+                        const result = await response.json();
+
+                        alert(result.message);
+                        console.log(result.message)
+
+                        if (result.message === "Login successfull") {
+                            window.location.href = "./home.html"
+                    
+                        }
+                    } else {
+                        console.error('Signup failed:', response.statusText);
+                    }
+                } catch (error) {
+                    console.error('Error during signup:', error);
+                } id = "login_"
+            }
+
+
+            async function register(e) {
+
+
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+
+            }
+            function login() {
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0";
+
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3a8a, #bbdefb);
+            color: #333;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 20px;
+            padding-top: 10px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            background: #ffffff; /* Changed to white for readability */
+            padding: 30px 25px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #4b5563;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #007bff 0%, #0056b3 100%);
+            border-color: transparent;
+            color: #fff;
+            padding: 10px 25px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #0056b3 0%, #007bff 100%);
+        }
+
+        .container {
+            max-width: 900px;
+            margin-top: 70px;
+        }
+
+        .row {
+            margin-top: 50px;
+        }
+
+        .col-lg-5 {
+            margin: 0 30px; /* Increased gap between the cards */
+        }
+
+        /* Gradient for cards */
+        .card:nth-child(1) {
+            background: linear-gradient(135deg, #8273c5, #a8b6bd); /* Teal gradient */
+            color: #ffffff;
+        }
+
+        .card:nth-child(2) {
+            background: linear-gradient(135deg, #ffb74d, #ffa726); /* Orange gradient */
+            color: #ffffff;
+        }
+
+        .card .card-text, .card {
+            color: #ffffff; /* Text color inside cards to contrast with gradient background */
+        }
+        .card-title{
+            color:black
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Employee Management System</h1>
+        <p class="lead" style="color: #ffffff;">Please choose an option below:</p>
+        <div class="row justify-content-center">
+            <!-- <div class="col-lg-5 col-md-6 mb-4">
+                <div class="card" style="display: none;">
+                    <div class="card-body" >
+                        <h5 class="card-title">Employee Details</h5>
+                        <p class="card-text">Check details of all employees in system.</p>
+                        <a href="employee.html" class="btn btn-primary">Go to Employee Details</a>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-lg-5 col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Salary Page</h5>
+                        <p class="card-text">View and manage salaries of employees.</p>
+                        <a href="table.html" class="btn btn-primary">Go to Salary Page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
