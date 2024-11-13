@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-const dbconnect = 'mongodb+srv://acbd2592:EwUxm8zOVJOu8Sue@cluster0.dfm8zit.mongodb.net/';
+const dbconnect = '';
 
 const app = express();
 const PORT = 3000;
